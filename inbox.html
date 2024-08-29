@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+   <title>QFA-Scope</title>
+   <!--css and font link here-->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/slick.css">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/responsive.css">
+   <!--css and font link end here-->
+</head>
+
+<body>
+   <div class="main d-flex align-items-stretch">
+      <div id="sidebar" class="sidebar">
+         <a href="#" id="icon-menu" class="icon-menu d-flex">
+            <svg width="20" height="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 10"
+               style="enable-background:new 0 0 18 10;" xml:space="preserve">
+               <path id="ic_about"
+                  d="M16.8,2.6H1.2C0.5,2.6,0,2,0,1.4V1.2C0,0.5,0.5,0,1.2,0h15.6C17.5,0,18,0.5,18,1.2v0.2 C18,2,17.5,2.6,16.8,2.6z M10.8,10H1.2C0.5,10,0,9.5,0,8.8V8.6C0,8,0.5,7.4,1.2,7.4h9.6C11.5,7.4,12,8,12,8.6v0.2 C12,9.5,11.5,10,10.8,10z" />
+            </svg>
+         </a>
+         <div class="logo">
+            <img src="img/logo-small.png" alt="" width="40" height="35" />
+         </div>
+         <ul class="menu-link-list">
+            <li>
+               <a href="#" class="link active">
+                  <svg class="icon" width="20" height="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 21"
+                     style="enable-background:new 0 0 26 21;" xml:space="preserve">
+                     <path id="ic_email"
+                        d="M23.2,2.6v15.8H2.8V2.6H23.2 M26,0H0v21h26V0L26,0z M19.4,2.6L13,9.8L6.6,2.6H19.4 M26,0H0 l13,13.6L26,0L26,0z" />
+                  </svg>
+                  <span>Inbox</span>
+                  <b class="lblMsg">2</b>
+               </a>
+            </li>
+            <li>
+               <a href="#" class="link icon-triangle">
+                  <img src="img/icon-triangle.png" alt="" width="20" height="16" class="icon" />
+                  <img src="img/icon-triangle-f.png" alt="" width="20" height="16" class="icon ifill" />
+                  <span>Important</span>
+               </a>
+            </li>
+            <li>
+               <a href="#" class="link">
+                  <svg class="icon" width="20" height="18" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 18"
+                     style="enable-background:new 0 0 20 18;" xml:space="preserve">
+                     <path id="ic_sent"
+                        d="M19.6,9l-6.2,6.3c-0.3,0.3-0.6,0.4-1,0.4c-0.4,0-0.8-0.2-1-0.4c-0.6-0.6-0.6-1.5,0-2.1L15,9.5H3.7 c-0.4,0-0.8,0.4-0.8,0.8v6.2c0,0.8-0.6,1.5-1.4,1.5S0,17.4,0,16.6c0,0,0-0.1,0-0.1v-6.2c0-2.1,1.6-3.8,3.7-3.8h11.4l-3.8-3.9 c-0.6-0.6-0.6-1.5,0-2.1c0.5-0.6,1.4-0.6,2-0.1c0,0,0.1,0.1,0.1,0.1l6.3,6.4C20.1,7.5,20.1,8.4,19.6,9z" />
+                  </svg>
+                  <span>Sent</span>
+               </a>
+            </li>
+            <li>
+               <a href="#" class="link">
+                  <svg class="icon" width="18" height="21" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 21"
+                     style="enable-background:new 0 0 18 21;" xml:space="preserve">
+                     <path id="ic_drafts"
+                        d="M11.6,5.2l2.8,3.6h0L11.6,5.2z M17.7,9.2l-6.9-8.7c-0.1-0.1-0.1-0.1-0.2-0.2 c-0.1-0.1-0.3-0.2-0.5-0.2C10.1,0,10,0,9.9,0H3.3C1.5,0,0,1.5,0,3.4v14.3C0,19.5,1.4,21,3.2,21c0,0,0,0,0.1,0h11.4 c1.8,0,3.3-1.5,3.3-3.3V10C18,9.7,17.9,9.4,17.7,9.2L17.7,9.2z M11.6,5.2l2.8,3.6h-3.3V4.6L11.6,5.2z M15.7,17.7c0,0.5-0.4,1-0.9,1 c0,0,0,0,0,0H3.3c-0.5,0-1-0.4-1-0.9c0,0,0,0,0,0V3.3c0-0.5,0.4-1,0.9-1c0,0,0,0,0,0h5.5v7.6c0,0.6,0.5,1.2,1.2,1.2c0,0,0,0,0,0h5.7 L15.7,17.7L15.7,17.7z" />
+                  </svg>
+                  <span>Drafts</span>
+               </a>
+            </li>
+            <li>
+               <a href="#" class="link">
+                  <svg class="icon" width="20" height="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                     style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                     <path id="ic_snoozed"
+                        d="M10,20C4.5,20,0,15.5,0,10S4.5,0,10,0s10,4.5,10,10C20,15.5,15.5,20,10,20z M10,2.3 c-4.2,0-7.7,3.4-7.7,7.7c0,4.2,3.4,7.7,7.7,7.7c4.2,0,7.7-3.4,7.7-7.7C17.7,5.8,14.2,2.3,10,2.3z M13.5,12.3H10 c-0.6,0-1.2-0.5-1.2-1.2V6.2C8.8,5.5,9.4,5,10,5c0.6,0,1.2,0.5,1.2,1.2l0,0v3.8h2.4c0.6,0,1.2,0.5,1.2,1.2S14.2,12.3,13.5,12.3 L13.5,12.3z" />
+                  </svg>
+                  <span>Snoozed</span>
+               </a>
+            </li>
+            <li>
+               <a href="#" class="link">
+                  <svg class="icon" width="20" height="18" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 18"
+                     style="enable-background:new 0 0 20 18;" xml:space="preserve">
+                     <path id="ic_trash"
+                        d="M18.8,3.9h-4.5V1.2c0-0.7-0.5-1.2-1.2-1.2H6.9C6.3,0,5.7,0.5,5.7,1.2v2.8H1.2 C0.5,3.9,0,4.5,0,5.2c0,0.7,0.5,1.2,1.2,1.2l0,0h1.6v8.6c0,1.7,1.4,3.1,3,3.1c0,0,0,0,0,0h8.4c1.7,0,3.1-1.4,3-3.1c0,0,0,0,0,0V6.4 h1.6c0.7,0,1.2-0.5,1.2-1.2C20,4.5,19.5,3.9,18.8,3.9z M8.1,2.4h3.8v1.5H8.1V2.4z M14.8,14.9c0,0.4-0.3,0.6-0.6,0.7H5.8 c-0.4,0-0.6-0.3-0.6-0.6c0,0,0,0,0,0V6.4h9.7V14.9z" />
+                  </svg>
+                  <span>Trash</span>
+               </a>
+            </li>
+            <li class="dropdown drpLinks-sec">
+               <a href="#" class="link collapsed text-uppercase" data-toggle="collapse" data-target="#lists">
+                  <span class="drpText">Lists</span>
+               </a>
+               <!-- <a href="#" class="s-icon-add">
+                     <svg width="15" height="15" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 14.3 14.3" style="enable-background:new 0 0 14.3 14.3;" xml:space="preserve"> <path id="ic_plus" d="M8.3,6V0H6v6H0v2.2H6v6h2.4v-6h5.9V6L8.3,6L8.3,6z"/> </svg> 
+                  </a> -->
+               <ul class="sub-menu collapse" id="lists">
+                  <li>
+                     <a href="#" class="link">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                           xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="16" height="16" x="0" y="0"
+                           viewBox="0 0 438.533 438.533" style="enable-background:new 0 0 512 512" xml:space="preserve"
+                           class="">
+                           <g>
+                              <g xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0   c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267   c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407   s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062   C438.533,179.485,428.732,142.795,409.133,109.203z M353.742,297.208c-13.894,23.791-32.736,42.633-56.527,56.534   c-23.791,13.894-49.771,20.834-77.945,20.834c-28.167,0-54.149-6.94-77.943-20.834c-23.791-13.901-42.633-32.743-56.527-56.534   c-13.897-23.791-20.843-49.772-20.843-77.941c0-28.171,6.949-54.152,20.843-77.943c13.891-23.791,32.738-42.637,56.527-56.53   c23.791-13.895,49.772-20.84,77.943-20.84c28.173,0,54.154,6.945,77.945,20.84c23.791,13.894,42.634,32.739,56.527,56.53   c13.895,23.791,20.838,49.772,20.838,77.943C374.58,247.436,367.637,273.417,353.742,297.208z"
+                                    fill="#ff3366" data-original="#000000" style="" class="" />
+                              </g>
+                        </svg>
+                        <span>Class mates</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" class="link">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                           xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="16" height="16" x="0" y="0"
+                           viewBox="0 0 438.533 438.533" style="enable-background:new 0 0 512 512" xml:space="preserve"
+                           class="">
+                           <g>
+                              <g xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0   c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267   c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407   s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062   C438.533,179.485,428.732,142.795,409.133,109.203z M353.742,297.208c-13.894,23.791-32.736,42.633-56.527,56.534   c-23.791,13.894-49.771,20.834-77.945,20.834c-28.167,0-54.149-6.94-77.943-20.834c-23.791-13.901-42.633-32.743-56.527-56.534   c-13.897-23.791-20.843-49.772-20.843-77.941c0-28.171,6.949-54.152,20.843-77.943c13.891-23.791,32.738-42.637,56.527-56.53   c23.791-13.895,49.772-20.84,77.943-20.84c28.173,0,54.154,6.945,77.945,20.84c23.791,13.894,42.634,32.739,56.527,56.53   c13.895,23.791,20.838,49.772,20.838,77.943C374.58,247.436,367.637,273.417,353.742,297.208z"
+                                    fill="#8c38e9" data-original="#000000" style="" class="" />
+                              </g>
+                        </svg>
+                        <span>Teachers</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" class="link">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                           xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="16" height="16" x="0" y="0"
+                           viewBox="0 0 438.533 438.533" style="enable-background:new 0 0 512 512" xml:space="preserve"
+                           class="">
+                           <g>
+                              <g xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0   c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267   c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407   s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062   C438.533,179.485,428.732,142.795,409.133,109.203z M353.742,297.208c-13.894,23.791-32.736,42.633-56.527,56.534   c-23.791,13.894-49.771,20.834-77.945,20.834c-28.167,0-54.149-6.94-77.943-20.834c-23.791-13.901-42.633-32.743-56.527-56.534   c-13.897-23.791-20.843-49.772-20.843-77.941c0-28.171,6.949-54.152,20.843-77.943c13.891-23.791,32.738-42.637,56.527-56.53   c23.791-13.895,49.772-20.84,77.943-20.84c28.173,0,54.154,6.945,77.945,20.84c23.791,13.894,42.634,32.739,56.527,56.53   c13.895,23.791,20.838,49.772,20.838,77.943C374.58,247.436,367.637,273.417,353.742,297.208z"
+                                    fill="#43c6e2" data-original="#000000" style="" class="" />
+                              </g>
+                        </svg>
+                        <span>School mates</span>
+                     </a>
+                  </li>
+               </ul>
+            </li>
+            <li class="dropdown drpTools-sec">
+               <a href="#" class="link text-uppercase" data-toggle="collapse" data-target="#tools">
+                  <span class="drpText">Tools</span>
+               </a>
+               <ul class="sub-menu collapse show" id="tools">
+                  <li>
+                     <a href="#" class="link">
+                        <svg class="icon" width="20" height="23" version="1.1" id="Layer_1"
+                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 20 22" style="enable-background:new 0 0 20 22;" xml:space="preserve">
+                           <path id="ic_calendar"
+                              d="M18.7,3.6h-3.3V1.3C15.4,0.6,14.7,0,14,0c-0.7,0-1.3,0.6-1.3,1.3v2.3H7.2V1.3 C7.2,0.6,6.6,0,5.9,0C5.2,0,4.6,0.6,4.6,1.3v2.3H1.3C0.6,3.6,0,4.1,0,4.8c0,0,0,0,0,0v13.9c0,1.8,1.5,3.3,3.3,3.3c0,0,0,0,0,0h13.3 c1.8,0,3.3-1.4,3.3-3.3c0,0,0,0,0,0V4.9C20,4.1,19.4,3.6,18.7,3.6C18.7,3.6,18.7,3.6,18.7,3.6z M2.6,6.1h14.7v2.8H2.6V6.1z M17.4,18.8c0,0.4-0.3,0.7-0.7,0.7c0,0,0,0,0,0H3.3c-0.4,0-0.7-0.3-0.7-0.7c0,0,0,0,0,0v-7.3h14.7V18.8z" />
+                        </svg>
+                        <span>Calendar</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" class="link">
+                        <svg class="icon" width="20" height="20" version="1.1" id="Layer_1"
+                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 28 28" style="enable-background:new 0 0 28 28;" xml:space="preserve">
+                           <path id="ic_user"
+                              d="M14,0.2C6.4,0.2,0.2,6.4,0.3,14S6.4,27.8,14,27.8c7.6,0,13.7-6.2,13.8-13.8 C27.8,6.4,21.6,0.2,14,0.2z M8.3,23.9v-0.7c0-3.2,2.6-5.7,5.8-5.7c3.1,0,5.6,2.6,5.7,5.7v0.7C16.2,26,11.8,26,8.3,23.9L8.3,23.9z M10.6,11.7c0-1.9,1.5-3.4,3.4-3.4c1.9,0,3.4,1.5,3.4,3.4c0,1.9-1.5,3.4-3.4,3.4C12.1,15.2,10.6,13.6,10.6,11.7 C10.6,11.7,10.6,11.7,10.6,11.7L10.6,11.7z M22,22.2c-0.3-2.6-1.9-5-4.3-6.2c2.4-2,2.7-5.7,0.7-8.1s-5.7-2.7-8.1-0.7 s-2.7,5.7-0.7,8.1c0.2,0.2,0.4,0.5,0.7,0.7c-2.4,1.2-4,3.5-4.3,6.2C1.5,17.8,1.4,10.6,5.8,6C10.2,1.4,17.4,1.3,22,5.7 c4.6,4.4,4.7,11.7,0.3,16.2C22.2,22.1,22.1,22.1,22,22.2L22,22.2z M14,28C6.3,28,0,21.7,0,14C0,6.3,6.2,0,14,0c0,0,0,0,0,0l0,0 c7.7,0,14,6.2,14,14C28,21.7,21.8,28,14,28C14,28,14,28,14,28z M14,0.5C6.5,0.5,0.5,6.5,0.5,14c0,7.5,6.1,13.5,13.6,13.5 c7.5,0,13.5-6.1,13.5-13.5C27.5,6.5,21.5,0.5,14,0.5L14,0.5z M14,25.7c-2.1,0-4.1-0.5-5.9-1.6L8,24.1v-0.9c0-3.3,2.7-6,6-6 c3.3,0,6,2.7,6,6c0,0,0,0,0,0v0.9l-0.1,0.1C18.1,25.2,16.1,25.7,14,25.7z M8.5,23.8c3.4,1.9,7.6,1.9,11,0v-0.6c0-3-2.5-5.5-5.6-5.4 c-3,0-5.4,2.5-5.4,5.4V23.8z M6.2,22.7l-0.3-0.3C1.2,17.9,1.1,10.5,5.6,5.9c2.2-2.2,5.1-3.5,8.2-3.6H14c6.5,0,11.7,5.2,11.7,11.7 c0,3-1.2,6-3.3,8.1c-0.1,0.1-0.2,0.2-0.3,0.3l-0.3,0.3l-0.1-0.4c-0.3-2.6-1.9-4.8-4.2-6l-0.3-0.2l0.3-0.2c2.3-2,2.6-5.4,0.7-7.8 s-5.4-2.6-7.8-0.7c-2.3,2-2.6,5.4-0.7,7.8c0.2,0.2,0.4,0.5,0.7,0.7l0.3,0.2l-0.3,0.2c-2.3,1.2-3.9,3.4-4.2,6L6.2,22.7z M14,2.7h-0.2 C7.6,2.8,2.6,8,2.7,14.2c0,2.8,1.2,5.5,3.1,7.6c0.4-2.4,1.9-4.5,4-5.7c-2.4-2.3-2.5-6-0.3-8.4c0.2-0.2,0.3-0.3,0.5-0.5 c2.5-2.1,6.3-1.8,8.4,0.7c2,2.4,1.8,6-0.5,8.2c2.1,1.2,3.6,3.3,4,5.7c4.3-4.5,4.1-11.6-0.3-15.9C19.7,3.9,16.9,2.7,14,2.7L14,2.7z M14,15.4c-2,0-3.7-1.6-3.7-3.7C10.4,9.7,12,8,14,8c2,0,3.7,1.6,3.7,3.7C17.7,13.7,16,15.4,14,15.4C14,15.4,14,15.4,14,15.4L14,15.4 z M14,8.5c-1.8,0-3.2,1.4-3.2,3.2c0,1.8,1.4,3.2,3.2,3.2s3.2-1.4,3.2-3.2c0,0,0,0,0,0C17.2,9.9,15.8,8.5,14,8.5L14,8.5z" />
+                        </svg>
+                        <span>Contacts</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" class="link">
+                        <svg class="icon" width="14" height="22" version="1.1" id="Layer_1"
+                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 14 22" style="enable-background:new 0 0 14 22;" xml:space="preserve">
+                           <path id="ic_reminders_copy"
+                              d="M13.4,7.1L1.9,0.2c0,0-0.1,0-0.1-0.1C1.7,0.1,1.6,0.1,1.5,0C1.4,0,1.3,0,1.2,0 C0.5,0,0,0.6,0,1.2c0,0,0,0,0,0v19.5C0,21.4,0.5,22,1.1,22s1.2-0.5,1.3-1.1c0,0,0-0.1,0-0.1v-4.8l11-6.6C13.8,9.1,14,8.7,14,8.2 C14,7.8,13.8,7.4,13.4,7.1z M2.4,12.7V3.8c0-0.1,0.1-0.2,0.2-0.2c0,0,0.1,0,0.1,0l7.4,4.4c0.1,0.1,0.1,0.2,0.1,0.3c0,0,0,0-0.1,0.1 l-7.4,4.4c-0.1,0.1-0.2,0-0.3-0.1C2.4,12.7,2.4,12.7,2.4,12.7L2.4,12.7z" />
+                        </svg>
+                        <span>Reminders</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" class="link">
+                        <svg class="icon" width="20" height="20" version="1.1" id="Layer_1"
+                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                           <path id="ic_drive_copy"
+                              d="M20,9.8c-0.1-5.3-4.4-9.6-9.8-9.7c-0.1,0-0.2,0-0.2,0C9.9,0,9.8,0,9.8,0 C4.2,0.2-0.1,4.7,0,10.3c0.1,5.5,4.7,9.9,10.2,9.7c5.3-0.1,9.6-4.4,9.7-9.7c0-0.1,0-0.2,0-0.2C20,9.9,20,9.8,20,9.8z M10,17.6 c-4.2,0-7.6-3.4-7.6-7.6c0-3.7,2.7-6.9,6.4-7.5V10c0,0.7,0.5,1.2,1.2,1.2h7.5C16.9,14.9,13.7,17.6,10,17.6z M11.2,8.8V2.5 C14.4,3,17,5.6,17.5,8.8H11.2z" />
+                        </svg>
+                        <span>Drive</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" class="link">
+                        <svg class="icon" width="18" height="20" version="1.1" id="Layer_1"
+                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 18 20" style="enable-background:new 0 0 18 20;" xml:space="preserve">
+                           <path id="ic_diary"
+                              d="M16,0H4C2.9,0,2,0.9,2,2v2H1C0.4,4,0,4.4,0,5s0.4,1,1,1h1v3H1c-0.6,0-1,0.4-1,1s0.4,1,1,1h1v3H1 c-0.6,0-1,0.4-1,1s0.4,1,1,1h1v2c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M4,18v-2h1c0.6,0,1-0.4,1-1s-0.4-1-1-1 H4v-3h1c0.6,0,1-0.4,1-1S5.6,9,5,9H4V6h1c0.6,0,1-0.4,1-1S5.6,4,5,4H4V2h12v16H4z" />
+                        </svg>
+                        <span>Diary</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#" class="link">
+                        <svg class="icon" width="20" height="17" version="1.1" id="Layer_1"
+                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 20 17" style="enable-background:new 0 0 20 17;" xml:space="preserve">
+                           <path id="ic_classes"
+                              d="M15.2,7.5c-0.5,0-0.9-0.3-1-0.8v3c0.3-0.1,0.7-0.2,1-0.2c0.4,0,0.7,0.1,1,0.2v-3 C16.1,7.2,15.7,7.5,15.2,7.5z M13.3,0H2.9C1.3,0,0,1.3,0,2.9c0,0,0,0,0,0v7.9c0,1.6,1.3,2.9,2.9,2.9c0,0,0,0,0,0h9.6v-1.4 c0-0.2,0-0.4,0.1-0.6H2.9c-0.5,0-0.8-0.4-0.8-0.8V2.9c0-0.5,0.4-0.8,0.8-0.8h10.5c0.5,0,0.8,0.4,0.8,0.8c0,0,0,0,0,0v3.2 c0.2-0.6,0.7-0.9,1.3-0.7c0.4,0.1,0.6,0.4,0.7,0.7V2.9C16.2,1.3,15,0,13.3,0C13.4,0,13.4,0,13.3,0z M14.2,9.4v0.4 c0.3-0.1,0.7-0.2,1-0.2C14.9,9.6,14.5,9.5,14.2,9.4z M16.2,3.4c-0.3-0.1-0.7-0.2-1-0.2c-0.3,0-0.7,0.1-1,0.2c-1.3,0.4-2.1,1.6-2.1,3 c0,0.7,0.2,1.3,0.6,1.8c0.4,0.5,0.9,0.9,1.5,1.2c0.3,0.1,0.7,0.2,1,0.2c0.3,0,0.7-0.1,1-0.2c0.6-0.2,1.1-0.6,1.5-1.2 c1-1.4,0.7-3.4-0.7-4.4C16.8,3.7,16.5,3.5,16.2,3.4z M14.2,6.8c0-0.1-0.1-0.2-0.1-0.3c0-0.1,0-0.2,0.1-0.3c0.2-0.6,0.7-0.9,1.3-0.7 c0.4,0.1,0.6,0.4,0.7,0.7c0,0.1,0.1,0.2,0.1,0.3c0,0.1,0,0.2-0.1,0.3c-0.2,0.6-0.8,0.9-1.3,0.7C14.6,7.3,14.3,7.1,14.2,6.8z M17.7,8.2c-0.5-0.3-1-0.5-1.5-0.6c-0.3-0.1-0.7-0.1-1-0.1c-0.3,0-0.7,0-1,0.1c-0.5,0.1-1,0.3-1.5,0.6c-1.2,0.8-2,2-2.2,3.5 c0,0.2,0,0.4,0,0.6V16c0,0.6,0.5,1,1,1H19c0.6,0,1-0.5,1-1v-3.6C20,10.7,19.1,9.1,17.7,8.2z M17.9,14.9h-5.5v-2.6 c0-0.2,0-0.4,0.1-0.6c0.2-0.9,0.8-1.6,1.7-1.9c0.3-0.1,0.7-0.2,1-0.2c0.4,0,0.7,0.1,1,0.2c1,0.4,1.7,1.4,1.7,2.6V14.9z M9.3,5.8H5.1 c-0.6,0-1-0.5-1-1l0,0c0-0.6,0.5-1,1-1h4.2c0.6,0,1,0.5,1,1l0,0C10.3,5.4,9.9,5.8,9.3,5.8L9.3,5.8z M8,9.6H5.1c-0.6,0-1-0.5-1-1l0,0 c0-0.6,0.5-1,1-1H8c0.6,0,1,0.5,1,1l0,0C9,9.1,8.5,9.6,8,9.6L8,9.6z" />
+                        </svg>
+                        <span>Classes</span>
+                     </a>
+                  </li>
+               </ul>
+            </li>
+            <li class="r-sblink">
+               <a href="#" class="link">
+                  <svg class="icon" width="20" height="23" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 22"
+                     style="enable-background:new 0 0 20 22;" xml:space="preserve">
+                     <path id="ic_calendar"
+                        d="M18.7,3.6h-3.3V1.3C15.4,0.6,14.7,0,14,0c-0.7,0-1.3,0.6-1.3,1.3v2.3H7.2V1.3 C7.2,0.6,6.6,0,5.9,0C5.2,0,4.6,0.6,4.6,1.3v2.3H1.3C0.6,3.6,0,4.1,0,4.8c0,0,0,0,0,0v13.9c0,1.8,1.5,3.3,3.3,3.3c0,0,0,0,0,0h13.3 c1.8,0,3.3-1.4,3.3-3.3c0,0,0,0,0,0V4.9C20,4.1,19.4,3.6,18.7,3.6C18.7,3.6,18.7,3.6,18.7,3.6z M2.6,6.1h14.7v2.8H2.6V6.1z M17.4,18.8c0,0.4-0.3,0.7-0.7,0.7c0,0,0,0,0,0H3.3c-0.4,0-0.7-0.3-0.7-0.7c0,0,0,0,0,0v-7.3h14.7V18.8z" />
+                  </svg>
+                  <span>Calendar</span>
+               </a>
+            </li>
+            <li class="r-sblink">
+               <a href="#" class="link">
+                  <svg class="icon" width="20" height="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28 28"
+                     style="enable-background:new 0 0 28 28;" xml:space="preserve">
+                     <path id="ic_user"
+                        d="M14,0.2C6.4,0.2,0.2,6.4,0.3,14S6.4,27.8,14,27.8c7.6,0,13.7-6.2,13.8-13.8 C27.8,6.4,21.6,0.2,14,0.2z M8.3,23.9v-0.7c0-3.2,2.6-5.7,5.8-5.7c3.1,0,5.6,2.6,5.7,5.7v0.7C16.2,26,11.8,26,8.3,23.9L8.3,23.9z M10.6,11.7c0-1.9,1.5-3.4,3.4-3.4c1.9,0,3.4,1.5,3.4,3.4c0,1.9-1.5,3.4-3.4,3.4C12.1,15.2,10.6,13.6,10.6,11.7 C10.6,11.7,10.6,11.7,10.6,11.7L10.6,11.7z M22,22.2c-0.3-2.6-1.9-5-4.3-6.2c2.4-2,2.7-5.7,0.7-8.1s-5.7-2.7-8.1-0.7 s-2.7,5.7-0.7,8.1c0.2,0.2,0.4,0.5,0.7,0.7c-2.4,1.2-4,3.5-4.3,6.2C1.5,17.8,1.4,10.6,5.8,6C10.2,1.4,17.4,1.3,22,5.7 c4.6,4.4,4.7,11.7,0.3,16.2C22.2,22.1,22.1,22.1,22,22.2L22,22.2z M14,28C6.3,28,0,21.7,0,14C0,6.3,6.2,0,14,0c0,0,0,0,0,0l0,0 c7.7,0,14,6.2,14,14C28,21.7,21.8,28,14,28C14,28,14,28,14,28z M14,0.5C6.5,0.5,0.5,6.5,0.5,14c0,7.5,6.1,13.5,13.6,13.5 c7.5,0,13.5-6.1,13.5-13.5C27.5,6.5,21.5,0.5,14,0.5L14,0.5z M14,25.7c-2.1,0-4.1-0.5-5.9-1.6L8,24.1v-0.9c0-3.3,2.7-6,6-6 c3.3,0,6,2.7,6,6c0,0,0,0,0,0v0.9l-0.1,0.1C18.1,25.2,16.1,25.7,14,25.7z M8.5,23.8c3.4,1.9,7.6,1.9,11,0v-0.6c0-3-2.5-5.5-5.6-5.4 c-3,0-5.4,2.5-5.4,5.4V23.8z M6.2,22.7l-0.3-0.3C1.2,17.9,1.1,10.5,5.6,5.9c2.2-2.2,5.1-3.5,8.2-3.6H14c6.5,0,11.7,5.2,11.7,11.7 c0,3-1.2,6-3.3,8.1c-0.1,0.1-0.2,0.2-0.3,0.3l-0.3,0.3l-0.1-0.4c-0.3-2.6-1.9-4.8-4.2-6l-0.3-0.2l0.3-0.2c2.3-2,2.6-5.4,0.7-7.8 s-5.4-2.6-7.8-0.7c-2.3,2-2.6,5.4-0.7,7.8c0.2,0.2,0.4,0.5,0.7,0.7l0.3,0.2l-0.3,0.2c-2.3,1.2-3.9,3.4-4.2,6L6.2,22.7z M14,2.7h-0.2 C7.6,2.8,2.6,8,2.7,14.2c0,2.8,1.2,5.5,3.1,7.6c0.4-2.4,1.9-4.5,4-5.7c-2.4-2.3-2.5-6-0.3-8.4c0.2-0.2,0.3-0.3,0.5-0.5 c2.5-2.1,6.3-1.8,8.4,0.7c2,2.4,1.8,6-0.5,8.2c2.1,1.2,3.6,3.3,4,5.7c4.3-4.5,4.1-11.6-0.3-15.9C19.7,3.9,16.9,2.7,14,2.7L14,2.7z M14,15.4c-2,0-3.7-1.6-3.7-3.7C10.4,9.7,12,8,14,8c2,0,3.7,1.6,3.7,3.7C17.7,13.7,16,15.4,14,15.4C14,15.4,14,15.4,14,15.4L14,15.4 z M14,8.5c-1.8,0-3.2,1.4-3.2,3.2c0,1.8,1.4,3.2,3.2,3.2s3.2-1.4,3.2-3.2c0,0,0,0,0,0C17.2,9.9,15.8,8.5,14,8.5L14,8.5z" />
+                  </svg>
+                  <span>Contacts</span>
+               </a>
+            </li>
+            <li class="r-sblink">
+               <a href="#" class="link">
+                  <svg class="icon" width="14" height="22" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 22"
+                     style="enable-background:new 0 0 14 22;" xml:space="preserve">
+                     <path id="ic_reminders_copy"
+                        d="M13.4,7.1L1.9,0.2c0,0-0.1,0-0.1-0.1C1.7,0.1,1.6,0.1,1.5,0C1.4,0,1.3,0,1.2,0 C0.5,0,0,0.6,0,1.2c0,0,0,0,0,0v19.5C0,21.4,0.5,22,1.1,22s1.2-0.5,1.3-1.1c0,0,0-0.1,0-0.1v-4.8l11-6.6C13.8,9.1,14,8.7,14,8.2 C14,7.8,13.8,7.4,13.4,7.1z M2.4,12.7V3.8c0-0.1,0.1-0.2,0.2-0.2c0,0,0.1,0,0.1,0l7.4,4.4c0.1,0.1,0.1,0.2,0.1,0.3c0,0,0,0-0.1,0.1 l-7.4,4.4c-0.1,0.1-0.2,0-0.3-0.1C2.4,12.7,2.4,12.7,2.4,12.7L2.4,12.7z" />
+                  </svg>
+                  <span>Reminders</span>
+               </a>
+            </li>
+            <li class="r-sblink">
+               <a href="#" class="link">
+                  <svg class="icon" width="20" height="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                     style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                     <path id="ic_drive_copy"
+                        d="M20,9.8c-0.1-5.3-4.4-9.6-9.8-9.7c-0.1,0-0.2,0-0.2,0C9.9,0,9.8,0,9.8,0 C4.2,0.2-0.1,4.7,0,10.3c0.1,5.5,4.7,9.9,10.2,9.7c5.3-0.1,9.6-4.4,9.7-9.7c0-0.1,0-0.2,0-0.2C20,9.9,20,9.8,20,9.8z M10,17.6 c-4.2,0-7.6-3.4-7.6-7.6c0-3.7,2.7-6.9,6.4-7.5V10c0,0.7,0.5,1.2,1.2,1.2h7.5C16.9,14.9,13.7,17.6,10,17.6z M11.2,8.8V2.5 C14.4,3,17,5.6,17.5,8.8H11.2z" />
+                  </svg>
+                  <span>Drive</span>
+               </a>
+            </li>
+            <li class="r-sblink">
+               <a href="#" class="link">
+                  <svg class="icon" width="18" height="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 20"
+                     style="enable-background:new 0 0 18 20;" xml:space="preserve">
+                     <path id="ic_diary"
+                        d="M16,0H4C2.9,0,2,0.9,2,2v2H1C0.4,4,0,4.4,0,5s0.4,1,1,1h1v3H1c-0.6,0-1,0.4-1,1s0.4,1,1,1h1v3H1 c-0.6,0-1,0.4-1,1s0.4,1,1,1h1v2c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M4,18v-2h1c0.6,0,1-0.4,1-1s-0.4-1-1-1 H4v-3h1c0.6,0,1-0.4,1-1S5.6,9,5,9H4V6h1c0.6,0,1-0.4,1-1S5.6,4,5,4H4V2h12v16H4z" />
+                  </svg>
+                  <span>Diary</span>
+               </a>
+            </li>
+            <li class="r-sblink">
+               <a href="#" class="link">
+                  <svg class="icon" width="20" height="17" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 17"
+                     style="enable-background:new 0 0 20 17;" xml:space="preserve">
+                     <path id="ic_classes"
+                        d="M15.2,7.5c-0.5,0-0.9-0.3-1-0.8v3c0.3-0.1,0.7-0.2,1-0.2c0.4,0,0.7,0.1,1,0.2v-3 C16.1,7.2,15.7,7.5,15.2,7.5z M13.3,0H2.9C1.3,0,0,1.3,0,2.9c0,0,0,0,0,0v7.9c0,1.6,1.3,2.9,2.9,2.9c0,0,0,0,0,0h9.6v-1.4 c0-0.2,0-0.4,0.1-0.6H2.9c-0.5,0-0.8-0.4-0.8-0.8V2.9c0-0.5,0.4-0.8,0.8-0.8h10.5c0.5,0,0.8,0.4,0.8,0.8c0,0,0,0,0,0v3.2 c0.2-0.6,0.7-0.9,1.3-0.7c0.4,0.1,0.6,0.4,0.7,0.7V2.9C16.2,1.3,15,0,13.3,0C13.4,0,13.4,0,13.3,0z M14.2,9.4v0.4 c0.3-0.1,0.7-0.2,1-0.2C14.9,9.6,14.5,9.5,14.2,9.4z M16.2,3.4c-0.3-0.1-0.7-0.2-1-0.2c-0.3,0-0.7,0.1-1,0.2c-1.3,0.4-2.1,1.6-2.1,3 c0,0.7,0.2,1.3,0.6,1.8c0.4,0.5,0.9,0.9,1.5,1.2c0.3,0.1,0.7,0.2,1,0.2c0.3,0,0.7-0.1,1-0.2c0.6-0.2,1.1-0.6,1.5-1.2 c1-1.4,0.7-3.4-0.7-4.4C16.8,3.7,16.5,3.5,16.2,3.4z M14.2,6.8c0-0.1-0.1-0.2-0.1-0.3c0-0.1,0-0.2,0.1-0.3c0.2-0.6,0.7-0.9,1.3-0.7 c0.4,0.1,0.6,0.4,0.7,0.7c0,0.1,0.1,0.2,0.1,0.3c0,0.1,0,0.2-0.1,0.3c-0.2,0.6-0.8,0.9-1.3,0.7C14.6,7.3,14.3,7.1,14.2,6.8z M17.7,8.2c-0.5-0.3-1-0.5-1.5-0.6c-0.3-0.1-0.7-0.1-1-0.1c-0.3,0-0.7,0-1,0.1c-0.5,0.1-1,0.3-1.5,0.6c-1.2,0.8-2,2-2.2,3.5 c0,0.2,0,0.4,0,0.6V16c0,0.6,0.5,1,1,1H19c0.6,0,1-0.5,1-1v-3.6C20,10.7,19.1,9.1,17.7,8.2z M17.9,14.9h-5.5v-2.6 c0-0.2,0-0.4,0.1-0.6c0.2-0.9,0.8-1.6,1.7-1.9c0.3-0.1,0.7-0.2,1-0.2c0.4,0,0.7,0.1,1,0.2c1,0.4,1.7,1.4,1.7,2.6V14.9z M9.3,5.8H5.1 c-0.6,0-1-0.5-1-1l0,0c0-0.6,0.5-1,1-1h4.2c0.6,0,1,0.5,1,1l0,0C10.3,5.4,9.9,5.8,9.3,5.8L9.3,5.8z M8,9.6H5.1c-0.6,0-1-0.5-1-1l0,0 c0-0.6,0.5-1,1-1H8c0.6,0,1,0.5,1,1l0,0C9,9.1,8.5,9.6,8,9.6L8,9.6z" />
+                  </svg>
+                  <span>Classes</span>
+               </a>
+            </li>
+         </ul>
+         <div class="sidebar-bottom text-center">
+            <div class="img">
+               <img src="img/img-user4.png" alt="" />
+            </div>
+            <h5>Jason Lawrence</h5>
+            <p>jason@appname.com</p>
+            <svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4 15"
+               style="enable-background:new 0 0 4 15;" xml:space="preserve">
+               <style type="text/css">
+                  .st0 {
+                     fill: #dfccb6;
+                  }
+               </style>
+               <path id="ic_more" class="st0"
+                  d="M2,0c1.1,0,2,0.9,2,2S3.1,4,2,4S0,3.1,0,2S0.9,0,2,0z M2,11c1.1,0,2,0.9,2,2s-0.9,2-2,2 s-2-0.9-2-2S0.9,11,2,11z" />
+            </svg>
+         </div>
+      </div>
+      <div class="content" id="content">
+         <div class="inbox-sec d-flex align-content-start">
+            <div class="ibs-items-sec">
+               <div class="search-bx">
+                  <svg class="icon" width="21" height="23" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20.9 22"
+                     style="enable-background:new 0 0 20.9 22;" xml:space="preserve">
+                     <path id="ic_search"
+                        d="M20.6,20.3L17,16.2c3.5-4,3-10.2-1-13.6c-4-3.5-10.2-3-13.6,1c-3.5,4-3,10.2,1,13.6c1.8,1.5,4,2.4,6.4,2.3 c2.1,0,4.1-0.7,5.8-2l3.6,4c0.2,0.2,0.5,0.3,0.7,0.3c0.2,0,0.5-0.1,0.7-0.2C21,21.4,21,20.7,20.6,20.3z M2,9.8 c0-4.3,3.5-7.7,7.8-7.6c4.3,0,7.7,3.5,7.6,7.8c0,2.1-0.9,4.1-2.5,5.6c-1.4,1.3-3.3,2.1-5.2,2.1C5.4,17.5,2,14.1,2,9.8z">
+                     </path>
+                  </svg>
+                  <input type="input" name="" class="form-control" placeholder="Search" />
+               </div>
+               <div id="inbox-lists" class="inbox-lists">
+                  <div class="item ils-item d-flex align-items-start">
+                     <div class="img text-center">
+                        <img src="img/img-user1.png" alt="" />
+                        <i class="icon-up">
+                           <svg width="20" height="17" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 16"
+                              style="enable-background:new 0 0 20 16;" xml:space="preserve">
+                              <style type="text/css">
+                                 .st0 {
+                                    fill: #DFCCB6;
+                                 }
+                              </style>
+                              <path id="ic_fill_important" class="st0" d="M10,0l10,16H0L10,0z" />
+                           </svg>
+                        </i>
+                     </div>
+                     <div class="item-del">
+                        <h5><span><i class="unread fas fa-circle"></i>Ashly Holand</span><span clasclass="time">5 min
+                              ago</span></h5>
+                        <h4>
+                           Friday Update
+                           <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                              version="1.1" width="16" height="16" x="0" y="0" viewBox="0 0 438.533 438.533"
+                              style="enable-background:new 0 0 512 512" xml:space="preserve">
+                              <g>
+                                 <g xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                       d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0   c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267   c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407   s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062   C438.533,179.485,428.732,142.795,409.133,109.203z M353.742,297.208c-13.894,23.791-32.736,42.633-56.527,56.534   c-23.791,13.894-49.771,20.834-77.945,20.834c-28.167,0-54.149-6.94-77.943-20.834c-23.791-13.901-42.633-32.743-56.527-56.534   c-13.897-23.791-20.843-49.772-20.843-77.941c0-28.171,6.949-54.152,20.843-77.943c13.891-23.791,32.738-42.637,56.527-56.53   c23.791-13.895,49.772-20.84,77.943-20.84c28.173,0,54.154,6.945,77.945,20.84c23.791,13.894,42.634,32.739,56.527,56.53   c13.895,23.791,20.838,49.772,20.838,77.943C374.58,247.436,367.637,273.417,353.742,297.208z"
+                                       fill="#ff3366" data-original="#000000" style="" class=""></path>
+                                 </g>
+                              </g>
+                           </svg>
+                        </h4>
+                        <p>Happy Friday Team! This week’s updates</p>
+                     </div>
+                  </div>
+                  <div class="item ils-item d-flex align-items-start">
+                     <div class="img text-center">
+                        <img src="img/img-user6.png" alt="" />
+                     </div>
+                     <div class="item-del">
+                        <h5><span><i class="unread fas fa-circle"></i>Clark from InVision</span><span class="time">1 hr
+                              ago</span></h5>
+                        <h4>How to create a great design</h4>
+                        <p>UX design is a valuable art that you can</p>
+                     </div>
+                  </div>
+                  <div class="item ils-item active d-flex align-items-start">
+                     <div class="img text-center">
+                        <img src="img/img-user5.png" alt="" />
+                        <i class="icon-up">
+                           <svg width="20" height="17" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 16"
+                              style="enable-background:new 0 0 20 16;" xml:space="preserve">
+                              <style type="text/css">
+                                 .st0 {
+                                    fill: #DFCCB6;
+                                 }
+                              </style>
+                              <path id="ic_fill_important" class="st0" d="M10,0l10,16H0L10,0z" />
+                           </svg>
+                        </i>
+                     </div>
+                     <div class="item-del">
+                        <h5><span>Frank Baker</span><span class="time">9:34 am</span></h5>
+                        <h4>
+                           Friday Update
+                           <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                              version="1.1" width="16" height="16" x="0" y="0" viewBox="0 0 438.533 438.533"
+                              style="enable-background:new 0 0 512 512" xml:space="preserve">
+                              <g>
+                                 <g xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                       d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0   c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267   c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407   s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062   C438.533,179.485,428.732,142.795,409.133,109.203z M353.742,297.208c-13.894,23.791-32.736,42.633-56.527,56.534   c-23.791,13.894-49.771,20.834-77.945,20.834c-28.167,0-54.149-6.94-77.943-20.834c-23.791-13.901-42.633-32.743-56.527-56.534   c-13.897-23.791-20.843-49.772-20.843-77.941c0-28.171,6.949-54.152,20.843-77.943c13.891-23.791,32.738-42.637,56.527-56.53   c23.791-13.895,49.772-20.84,77.943-20.84c28.173,0,54.154,6.945,77.945,20.84c23.791,13.894,42.634,32.739,56.527,56.53   c13.895,23.791,20.838,49.772,20.838,77.943C374.58,247.436,367.637,273.417,353.742,297.208z"
+                                       fill="#8c38e9" data-original="#000000" style="" class=""></path>
+                                 </g>
+                              </g>
+                           </svg>
+                        </h4>
+                        <p>Happy Friday Team! This week’s updates</p>
+                     </div>
+                  </div>
+                  <div class="item ils-item d-flex align-items-start">
+                     <div class="img text-center">
+                        <span class="iText">M</span>
+                     </div>
+                     <div class="item-del">
+                        <h5><span>Max Martinez</span><span class="time">9:03 am</span></h5>
+                        <h4>Your Insights?</h4>
+                        <p>Hey, If I’m not mistaken, you signed up for our</p>
+                     </div>
+                  </div>
+                  <div class="item ils-item d-flex align-items-start">
+                     <div class="img text-center">
+                        <img src="img/img-user7.png" alt="" />
+                     </div>
+                     <div class="item-del">
+                        <h5><span>Michael Kollar</span><span class="time">9:00 am</span></h5>
+                        <h4>
+                           Travel Photos
+                           <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                              version="1.1" width="16" height="16" x="0" y="0" viewBox="0 0 438.533 438.533"
+                              style="enable-background:new 0 0 512 512" xml:space="preserve">
+                              <g>
+                                 <g xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                       d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0   c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267   c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407   s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062   C438.533,179.485,428.732,142.795,409.133,109.203z M353.742,297.208c-13.894,23.791-32.736,42.633-56.527,56.534   c-23.791,13.894-49.771,20.834-77.945,20.834c-28.167,0-54.149-6.94-77.943-20.834c-23.791-13.901-42.633-32.743-56.527-56.534   c-13.897-23.791-20.843-49.772-20.843-77.941c0-28.171,6.949-54.152,20.843-77.943c13.891-23.791,32.738-42.637,56.527-56.53   c23.791-13.895,49.772-20.84,77.943-20.84c28.173,0,54.154,6.945,77.945,20.84c23.791,13.894,42.634,32.739,56.527,56.53   c13.895,23.791,20.838,49.772,20.838,77.943C374.58,247.436,367.637,273.417,353.742,297.208z"
+                                       fill="#43c6e2" data-original="#000000" style="" class=""></path>
+                                 </g>
+                              </g>
+                           </svg>
+                        </h4>
+                        <p>What do you think about latest shots</p>
+                     </div>
+                  </div>
+                  <div class="item ils-item d-flex align-items-start">
+                     <div class="img text-center">
+                        <img src="img/img-user8.png" alt="" />
+                        <i class="icon-up">
+                           <svg width="20" height="17" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 16"
+                              style="enable-background:new 0 0 20 16;" xml:space="preserve">
+                              <style type="text/css">
+                                 .st0 {
+                                    fill: #DFCCB6;
+                                 }
+                              </style>
+                              <path id="ic_fill_important" class="st0" d="M10,0l10,16H0L10,0z" />
+                           </svg>
+                        </i>
+                     </div>
+                     <div class="item-del">
+                        <h5><span>Patricia Jindal</span><span class="time">8:23 am</span></h5>
+                        <h4>
+                           Company Q&A
+                           <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                              version="1.1" width="16" height="16" x="0" y="0" viewBox="0 0 438.533 438.533"
+                              style="enable-background:new 0 0 512 512" xml:space="preserve">
+                              <g>
+                                 <g xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                       d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0   c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267   c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407   s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062   C438.533,179.485,428.732,142.795,409.133,109.203z M353.742,297.208c-13.894,23.791-32.736,42.633-56.527,56.534   c-23.791,13.894-49.771,20.834-77.945,20.834c-28.167,0-54.149-6.94-77.943-20.834c-23.791-13.901-42.633-32.743-56.527-56.534   c-13.897-23.791-20.843-49.772-20.843-77.941c0-28.171,6.949-54.152,20.843-77.943c13.891-23.791,32.738-42.637,56.527-56.53   c23.791-13.895,49.772-20.84,77.943-20.84c28.173,0,54.154,6.945,77.945,20.84c23.791,13.894,42.634,32.739,56.527,56.53   c13.895,23.791,20.838,49.772,20.838,77.943C374.58,247.436,367.637,273.417,353.742,297.208z"
+                                       fill="#ff3366" data-original="#000000" style="" class=""></path>
+                                 </g>
+                              </g>
+                           </svg>
+                        </h4>
+                        <p>We have a company Q&A scheduled for today</p>
+                     </div>
+                  </div>
+                  <div class="item ils-item d-flex align-items-start">
+                     <div class="img text-center">
+                        <img src="img/img-user9.png" alt="" />
+                     </div>
+                     <div class="item-del">
+                        <h5><span>Leticia Suarez</span><span class="time">8:07 am</span></h5>
+                        <h4>
+                           Landing Page
+                           <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                              version="1.1" width="16" height="16" x="0" y="0" viewBox="0 0 438.533 438.533"
+                              style="enable-background:new 0 0 512 512" xml:space="preserve">
+                              <g>
+                                 <g xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                       d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0   c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267   c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407   s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062   C438.533,179.485,428.732,142.795,409.133,109.203z M353.742,297.208c-13.894,23.791-32.736,42.633-56.527,56.534   c-23.791,13.894-49.771,20.834-77.945,20.834c-28.167,0-54.149-6.94-77.943-20.834c-23.791-13.901-42.633-32.743-56.527-56.534   c-13.897-23.791-20.843-49.772-20.843-77.941c0-28.171,6.949-54.152,20.843-77.943c13.891-23.791,32.738-42.637,56.527-56.53   c23.791-13.895,49.772-20.84,77.943-20.84c28.173,0,54.154,6.945,77.945,20.84c23.791,13.894,42.634,32.739,56.527,56.53   c13.895,23.791,20.838,49.772,20.838,77.943C374.58,247.436,367.637,273.417,353.742,297.208z"
+                                       fill="#ff3366" data-original="#000000" style="" class=""></path>
+                                 </g>
+                              </g>
+                           </svg>
+                        </h4>
+                        <p>Some interesting ui pattern to consider</p>
+                     </div>
+                  </div>
+               </div>
+               <a href="javascript:void(0);" class="icon-add" data-toggle="modal" data-target="#modal-add-msg">
+                  <svg width="15" height="15" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.3 14.3"
+                     style="enable-background:new 0 0 14.3 14.3;" xml:space="preserve">
+                     <path id="ic_plus" d="M8.3,6V0H6v6H0v2.2H6v6h2.4v-6h5.9V6L8.3,6L8.3,6z"></path>
+                  </svg>
+               </a>
+            </div>
+            <div class="ibs-chat-bx" id="ibs-chat-bx">
+               <a href="#" id="cb-cancel" class="icon-cancel d-block d-xl-none">
+                  <svg width="16" height="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34 34"
+                     style="enable-background:new 0 0 34 34;" xml:space="preserve">
+                     <path id="ic_close"
+                        d="M33.5,30.9c0.7,0.7,0.7,1.9,0,2.6c-0.7,0.7-1.9,0.7-2.6,0L17,19.6L3.1,33.5 c-0.7,0.7-1.9,0.7-2.6,0c-0.7-0.7-0.7-1.9,0-2.6L14.4,17L0.5,3.1c-0.7-0.7-0.7-1.9,0-2.6c0.7-0.7,1.8-0.7,2.6,0L17,14.4L30.9,0.5 c0.7-0.7,1.9-0.7,2.6,0s0.7,1.9,0,2.6L19.6,17L33.5,30.9z">
+                     </path>
+                  </svg>
+               </a>
+               <div class="ic-top d-flex align-content-sm-center justify-content-sm-between flex-wrap flex-sm-nowrap">
+                  <div class="ict-left d-flex align-content-center ">
+                     <div class="img">
+                        <img src="img/img-user5.png" alt="" />
+                     </div>
+                     <div class="il-desc">
+                        <div class="d-flex align-items-center">
+                           <h5>Frank Baker to</h5>
+                           <div class="drp-bx dropdown show">
+                              <a class="dLink dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                 data-toggle="dropdown">
+                                 Me
+                              </a>
+                              <div class="dropdown-menu">
+                                 <a class="dropdown-item" href="#">You</a>
+                                 <a class="dropdown-item" href="#">Both</a>
+                              </div>
+                           </div>
+                        </div>
+                        <h6 class="m-0">9:34 am - 6 hours ago</h6>
+                     </div>
+                  </div>
+                  <div class="ict-right ml-auto ml-sm-0 mt-4 mt-sm-0 d-flex align-items-center">
+                     <span class="lblBadge badge purple">FRIENDS</span>
+                     <a href="#" class="icon active">
+                        <svg width="20" height="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 16"
+                           style="enable-background:new 0 0 20 16;" xml:space="preserve">
+                           <path id="ic_fill_important" d="M10,0l10,16H0L10,0z" />
+                        </svg>
+                     </a>
+                     <a href="#" class="icon">
+                        <svg width="20" height="18" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 18"
+                           style="enable-background:new 0 0 20 18;" xml:space="preserve">
+                           <path id="ic_trash"
+                              d="M18.8,3.9h-4.5V1.2c0-0.7-0.5-1.2-1.2-1.2H6.9C6.3,0,5.7,0.5,5.7,1.2v2.8H1.2 C0.5,3.9,0,4.5,0,5.2c0,0.7,0.5,1.2,1.2,1.2l0,0h1.6v8.6c0,1.7,1.4,3.1,3,3.1c0,0,0,0,0,0h8.4c1.7,0,3.1-1.4,3-3.1c0,0,0,0,0,0V6.4 h1.6c0.7,0,1.2-0.5,1.2-1.2C20,4.5,19.5,3.9,18.8,3.9z M8.1,2.4h3.8v1.5H8.1V2.4z M14.8,14.9c0,0.4-0.3,0.6-0.6,0.7H5.8 c-0.4,0-0.6-0.3-0.6-0.6c0,0,0,0,0,0V6.4h9.7V14.9z" />
+                        </svg>
+                     </a>
+                     <a href="#" class="icon">
+                        <svg width="16" height="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16"
+                           style="enable-background:new 0 0 16 16;" xml:space="preserve">
+                           <path id="ic_mark"
+                              d="M14.8,0H1.2C0.5,0,0,0.5,0,1.2l0,0V13c0,1.7,1.3,3,3,3h10c1.7,0,3-1.3,3-3V1.2 C16,0.5,15.5,0,14.8,0C14.8,0,14.8,0,14.8,0z M8,9.2c0.6,0,1.2-0.5,1.2-1.2V2.3h4.4V13c0,0.3-0.3,0.6-0.6,0.6c0,0,0,0,0,0H3 c-0.3,0-0.6-0.3-0.6-0.6c0,0,0,0,0,0V2.3h4.5V8C6.8,8.7,7.3,9.2,8,9.2z" />
+                        </svg>
+                     </a>
+                     <a href="#" class="icon">
+                        <svg width="17" height="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17 16"
+                           style="enable-background:new 0 0 17 16;" xml:space="preserve">
+                           <path id="ic_reply"
+                              d="M0.4,7.5l5.3,5.3c0.2,0.2,0.5,0.4,0.9,0.4c0.3,0,0.6-0.1,0.9-0.4c0.5-0.5,0.5-1.3,0-1.7 c0,0,0,0,0,0L4.3,7.9h9.6c0.4,0,0.7,0.3,0.7,0.7v6.2c0,0.7,0.6,1.2,1.2,1.2s1.2-0.6,1.2-1.2c0,0,0,0,0,0V8.6c0-1.7-1.4-3.1-3.1-3.2 H4.2l3.3-3.3c0.5-0.5,0.5-1.3,0-1.8s-1.3-0.5-1.8,0L0.4,5.7C-0.1,6.2-0.1,7,0.4,7.5z" />
+                        </svg>
+                     </a>
+                     <a href="#" class="icon">
+                        <svg width="4" height="15" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4 15"
+                           style="enable-background:new 0 0 4 15;" xml:space="preserve">
+                           <path id="ic_more"
+                              d="M2,0c1.1,0,2,0.9,2,2S3.1,4,2,4S0,3.1,0,2S0.9,0,2,0z M2,11c1.1,0,2,0.9,2,2s-0.9,2-2,2 s-2-0.9-2-2S0.9,11,2,11z" />
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+               <div class="ic-body">
+                  <h2>Circulum for September</h2>
+                  <p>Hey Jason,</p><br>
+                  <p>See atteched for the new circulum.</p><br>
+                  <p class="m-0">Thanks</p>
+                  <br><br><br><br><br><br><br><br><br><br>
+                  <div class="file-bx d-flex align-items-center justify-content-between">
+                     <div class="fb-left d-flex align-items-center">
+                        <svg width="31" height="34" class="img" version="1.1" id="Layer_1"
+                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 31 34" style="enable-background:new 0 0 31 34;" xml:space="preserve">
+                           <path id="ic_pdf"
+                              d="M16.9,21.8c-0.4-0.5-1.1-0.8-1.8-0.8h-0.9v5.8h0.9c0.7,0,1.3-0.2,1.8-0.8C17.8,24.8,17.8,23.1,16.9,21.8z M16.9,21.8c-0.4-0.5-1.1-0.8-1.8-0.8h-0.9v5.8h0.9c0.7,0,1.3-0.2,1.8-0.8C17.8,24.8,17.8,23.1,16.9,21.8z M29.1,0H1.9 C0.8,0,0,0.9,0,1.9v30.1C0,33.1,0.8,34,1.9,34h27.2c1.1,0,1.9-0.9,1.9-1.9V1.9C31,0.9,30.2,0,29.1,0L29.1,0z M9.7,23.9 c-0.2,0.3-0.6,0.6-0.9,0.7c-0.5,0.2-1,0.3-1.5,0.3H6.1v3.6h-2v-9.2h3.2c0.8,0,1.6,0.2,2.2,0.8c0.5,0.5,0.8,1.2,0.8,2 C10.3,22.8,10.1,23.4,9.7,23.9L9.7,23.9z M18.3,27.2c-0.8,0.9-2,1.3-3.2,1.3h-2.9v-9.2h2.9c1.2,0,2.4,0.4,3.2,1.3 c0.9,0.9,1.3,2.1,1.3,3.3C19.6,25.2,19.2,26.4,18.3,27.2L18.3,27.2z M26.9,21.1h-3.3V23H26v1.7h-2.5v3.8h-2v-9.2h5.3V21.1L26.9,21.1 z M15.1,21.1h-0.9v5.8h0.9c0.7,0,1.3-0.2,1.8-0.8c0.9-1.3,0.9-2.9,0-4.2C16.5,21.3,15.8,21,15.1,21.1L15.1,21.1z M7.3,21.1H6.1v2.2 h1.2c0.3,0,0.5-0.1,0.7-0.3c0.4-0.5,0.4-1.1,0-1.6C7.8,21.2,7.6,21.1,7.3,21.1L7.3,21.1z" />
+                        </svg>
+                        <h5>Circulum.pdf<span>120 KB</span></h5>
+                     </div>
+                     <div class="fb-right d-flex align-items-center">
+                        <a href="#" class="icon">
+                           <svg width="12" height="15" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.2 16.7"
+                              style="enable-background:new 0 0 12.2 16.7;" xml:space="preserve">
+                              <path id="ic_right_arrow" d="M12.2,0H9.1L0,8.3l9.1,8.4h3.2L3.2,8.3L12.2,0z" />
+                           </svg>
+                        </a>
+                        <a href="#" class="icon">
+                           <svg width="12" height="15" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.3 16.6"
+                              style="enable-background:new 0 0 12.3 16.6;" xml:space="preserve">
+                              <path id="ic_left_arrow" d="M0,0h3.2l9.1,8.3l-9.1,8.3H0l9.1-8.3L0,0z" />
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="ic-bottom d-flex align-items-start">
+                  <div class="img">
+                     <img src="img/img-user4.png" alt="" />
+                  </div>
+                  <div class="form-group">
+                     <textarea class="form-control" placeholder="Type someting..."></textarea>
+                     <div class="fg-bottom d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                           <a href="#" class="f-icon ml-0">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 17 17">
+                                 <path id="ic_image" class="cls-1"
+                                    d="M166.959,1547.53a2.835,2.835,0,1,1,2.833-2.84A2.843,2.843,0,0,1,166.959,1547.53Zm0-3.78a0.945,0.945,0,1,0,.944.94A0.943,0.943,0,0,0,166.959,1543.75Zm3.208-5.75H158.833a2.831,2.831,0,0,0-2.833,2.83v11.34a2.2,2.2,0,0,0,.208,1,0.191,0.191,0,0,0,.019.09,0.63,0.63,0,0,0,.113.23,0.074,0.074,0,0,0,.038.04,0.228,0.228,0,0,0,.075.11,2.75,2.75,0,0,0,2.38,1.36h11.334a2.832,2.832,0,0,0,2.833-2.83v-11.34A2.832,2.832,0,0,0,170.167,1538Zm-11.334,15.11a1.146,1.146,0,0,1-.415-0.09l3.381-3.37,3.475,3.46h-6.441Zm12.278-.94a0.931,0.931,0,0,1-.944.94h-2.248l-5.459-5.48a0.967,0.967,0,0,0-1.341,0l-3.23,3.23v-10.03a0.93,0.93,0,0,1,.944-0.94h11.334a0.931,0.931,0,0,1,.944.94v11.34Z"
+                                    transform="translate(-156 -1538)" />
+                              </svg>
+                           </a>
+                           <a href="#" class="f-icon">
+                              <svg width="15" height="15" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.3 16.6"
+                                 style="enable-background:new 0 0 17.3 16.6;" xml:space="preserve">
+                                 <path id="ic_atteched"
+                                    d="M17.1,7.9l-7,7c-2.3,2.3-6,2.3-8.3,0c-2.3-2.3-2.3-6,0-8.2c0,0,0,0,0,0L3.4,5l3.4-3.4l0.2-0.2 c1.6-1.7,4.3-1.9,6-0.3c1.6,1.7,1.4,4.4-0.3,6l-4.4,4.3c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4 c0,0,0,0,0,0l4.4-4.3c1-0.8,1.1-2.2,0.3-3.2c-1-0.8-2.4-0.7-3.2,0.3L3.1,8c-1.5,1.5-1.5,4,0,5.5c0,0,0,0,0,0c1.5,1.5,4,1.5,5.5,0 l7-7c0.4-0.4,1-0.3,1.4,0.1C17.4,6.9,17.4,7.5,17.1,7.9z" />
+                              </svg>
+                           </a>
+                           <a href="#" class="f-icon">
+                              <svg width="15" height="14" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17 16"
+                                 style="enable-background:new 0 0 17 16;" xml:space="preserve">
+                                 <path id="ic_link"
+                                    d="M6.1,16c-1.6,0-3.1-0.6-4.3-1.7c-1.1-1-1.8-2.5-1.8-4c0-1.5,0.6-3,1.8-4.1l2.5-2.3 c0.4-0.4,1-0.4,1.4,0C6,4.3,6.1,4.8,5.7,5.2c0,0,0,0-0.1,0.1L3.2,7.6C2.4,8.3,2,9.3,2,10.3c0,1,0.4,2,1.2,2.7c1.6,1.5,4.1,1.5,5.7,0 c0.4-0.4,1-0.4,1.5-0.1c0.4,0.3,0.4,0.9,0.1,1.2c0,0,0,0.1-0.1,0.1l-0.1,0.1C9.2,15.4,7.7,16,6.1,16z M12.1,12.3 c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.3-0.4-0.9-0.1-1.3c0,0,0,0,0.1-0.1l2.4-2.3C15.3,7,15.4,4.7,14,3.2c-0.1-0.1-0.1-0.1-0.2-0.2 c-1.6-1.5-4.1-1.5-5.7,0C7.6,3.4,7,3.4,6.6,3C6.2,2.7,6.2,2.1,6.6,1.7c0,0,0,0,0.1-0.1c2.4-2.2,6.2-2.2,8.6,0 c2.2,2.1,2.4,5.6,0.3,7.8c-0.1,0.1-0.2,0.2-0.3,0.3L12.8,12C12.6,12.2,12.4,12.3,12.1,12.3z M6.3,10L6.3,10C6,9.7,5.9,9.1,6.3,8.7 c0,0,0,0,0.1-0.1L9.2,6c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.3,0.4,0.9,0.1,1.3c0,0,0,0-0.1,0.1L7.8,10C7.4,10.4,6.7,10.4,6.3,10L6.3,10z" />
+                              </svg>
+                           </a>
+                           <a href="#" class="f-icon">
+                              <svg width="14" height="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 15 19"
+                                 style="enable-background:new 0 0 15 19;" xml:space="preserve">
+                                 <path id="ic_map"
+                                    d="M7.5,19c-0.3,0-0.6-0.1-0.8-0.3C6.1,18,0,11.7,0,7.7C-0.1,3.6,3.2,0.1,7.3,0 c4.1-0.1,7.6,3.2,7.7,7.3c0,0.1,0,0.3,0,0.4c0,4-6.1,10.2-6.8,10.9C8.1,18.9,7.8,19,7.5,19z M7.5,2.2c-3,0-5.4,2.5-5.3,5.5 c0,2.1,3,6,5.3,8.6c2.3-2.5,5.3-6.5,5.3-8.6C12.9,4.7,10.5,2.3,7.5,2.2z" />
+                              </svg>
+                           </a>
+                           <a href="#" class="f-icon">
+                              <svg width="15" height="15" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17 17"
+                                 style="enable-background:new 0 0 17 17;" xml:space="preserve">
+                                 <path id="ic_emoji"
+                                    d="M8.5,17C3.8,17,0,13.2,0,8.5S3.8,0,8.5,0C13.2,0,17,3.8,17,8.5C17,13.2,13.2,17,8.5,17z M8.5,1.9 C4.9,2,2,4.9,2,8.5c0,3.6,2.9,6.6,6.6,6.6c3.6,0,6.6-2.9,6.6-6.6C15.1,4.9,12.1,2,8.5,1.9z M8.5,13.2c-1.7,0-3.2-0.9-4.1-2.3 c-0.3-0.5-0.1-1.1,0.4-1.3c0.5-0.2,1-0.1,1.3,0.3c0.8,1.3,2.5,1.8,3.8,1c0.4-0.2,0.7-0.6,1-1c0.3-0.5,0.9-0.6,1.3-0.4 c0.5,0.3,0.6,0.9,0.4,1.3l0,0C11.8,12.3,10.2,13.2,8.5,13.2z" />
+                              </svg>
+                           </a>
+                        </div>
+                        <button type="button" class="btn btn-icon-black btn-send">
+                           <svg class="icon" width="15" height="17" version="1.1" id="Layer_1"
+                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                              y="0px" viewBox="0 0 17 20" style="enable-background:new 0 0 17 20;" xml:space="preserve">
+                              <path id="ic_send"
+                                 d="M16.4,8.8L2,0.2c-0.4-0.2-0.9-0.2-1.3,0C0.3,0.5,0,0.9,0,1.4v17.3c0,0.5,0.3,0.9,0.7,1.2 C0.9,19.9,1.1,20,1.3,20c0.2,0,0.5-0.1,0.7-0.2l14.4-8.7c0.7-0.4,0.9-1.2,0.5-1.9C16.7,9.1,16.5,8.9,16.4,8.8z M2.2,17v-5.8h4.4 c0.6,0,1.1-0.6,1.1-1.2c0-0.6-0.5-1.1-1.1-1.1H2.2V3l11.6,7L2.2,17z" />
+                           </svg>
+                           <span class="d-none d-sm-block">Send</span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- modal add msg-->
+   <div class="modal fade modal-add-msg" id="modal-add-msg" tabindex="-1" role="dialog">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <svg width="30" height="30" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34 34"
+            style="enable-background:new 0 0 34 34;" xml:space="preserve">
+            <path id="ic_close"
+               d="M33.5,30.9c0.7,0.7,0.7,1.9,0,2.6c-0.7,0.7-1.9,0.7-2.6,0L17,19.6L3.1,33.5 c-0.7,0.7-1.9,0.7-2.6,0c-0.7-0.7-0.7-1.9,0-2.6L14.4,17L0.5,3.1c-0.7-0.7-0.7-1.9,0-2.6c0.7-0.7,1.8-0.7,2.6,0L17,14.4L30.9,0.5 c0.7-0.7,1.9-0.7,2.6,0s0.7,1.9,0,2.6L19.6,17L33.5,30.9z" />
+         </svg>
+      </button>
+      <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <div class="d-block">
+                  <h5 class="modal-title m-0">New Message</h5>
+               </div>
+            </div>
+            <div class="modal-body p-0">
+               <div class="to-sec">
+                  <div class="lblTo d-flex align-items-center justify-content-between">
+                     <label class="label">To</label>
+                     <div class="links-sec d-flex">
+                        <a href="#" class="badge gray">CC</a>
+                        <a href="#" class="badge gray">BCC</a>
+                     </div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                     <img src="img/img-user5.png" alt="" class="img" />
+                     <div class="uDetails">
+                        <h5>Frank Baker</h5>
+                        <a href="#" class="lnkEmailid">frank@appname.com</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <input type="text" class="form-control" placeholder="SUBJECT" />
+               </div>
+               <div class="form-group textArea">
+                  <textarea class="form-control" placeholder="Type someting..."></textarea>
+               </div>
+            </div>
+            <div class="modal-footer justify-content-between align-items-center flex-wrap flex-sm-nowrap">
+               <div class="d-flex align-items-center">
+                  <a href="#" class="f-icon ml-0">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 17 17">
+                        <path id="ic_image" class="cls-1"
+                           d="M166.959,1547.53a2.835,2.835,0,1,1,2.833-2.84A2.843,2.843,0,0,1,166.959,1547.53Zm0-3.78a0.945,0.945,0,1,0,.944.94A0.943,0.943,0,0,0,166.959,1543.75Zm3.208-5.75H158.833a2.831,2.831,0,0,0-2.833,2.83v11.34a2.2,2.2,0,0,0,.208,1,0.191,0.191,0,0,0,.019.09,0.63,0.63,0,0,0,.113.23,0.074,0.074,0,0,0,.038.04,0.228,0.228,0,0,0,.075.11,2.75,2.75,0,0,0,2.38,1.36h11.334a2.832,2.832,0,0,0,2.833-2.83v-11.34A2.832,2.832,0,0,0,170.167,1538Zm-11.334,15.11a1.146,1.146,0,0,1-.415-0.09l3.381-3.37,3.475,3.46h-6.441Zm12.278-.94a0.931,0.931,0,0,1-.944.94h-2.248l-5.459-5.48a0.967,0.967,0,0,0-1.341,0l-3.23,3.23v-10.03a0.93,0.93,0,0,1,.944-0.94h11.334a0.931,0.931,0,0,1,.944.94v11.34Z"
+                           transform="translate(-156 -1538)" />
+                     </svg>
+                  </a>
+                  <a href="#" class="f-icon">
+                     <svg width="15" height="15" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.3 16.6"
+                        style="enable-background:new 0 0 17.3 16.6;" xml:space="preserve">
+                        <path id="ic_atteched"
+                           d="M17.1,7.9l-7,7c-2.3,2.3-6,2.3-8.3,0c-2.3-2.3-2.3-6,0-8.2c0,0,0,0,0,0L3.4,5l3.4-3.4l0.2-0.2 c1.6-1.7,4.3-1.9,6-0.3c1.6,1.7,1.4,4.4-0.3,6l-4.4,4.3c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4 c0,0,0,0,0,0l4.4-4.3c1-0.8,1.1-2.2,0.3-3.2c-1-0.8-2.4-0.7-3.2,0.3L3.1,8c-1.5,1.5-1.5,4,0,5.5c0,0,0,0,0,0c1.5,1.5,4,1.5,5.5,0 l7-7c0.4-0.4,1-0.3,1.4,0.1C17.4,6.9,17.4,7.5,17.1,7.9z" />
+                     </svg>
+                  </a>
+                  <a href="#" class="f-icon">
+                     <svg width="15" height="14" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17 16"
+                        style="enable-background:new 0 0 17 16;" xml:space="preserve">
+                        <path id="ic_link"
+                           d="M6.1,16c-1.6,0-3.1-0.6-4.3-1.7c-1.1-1-1.8-2.5-1.8-4c0-1.5,0.6-3,1.8-4.1l2.5-2.3 c0.4-0.4,1-0.4,1.4,0C6,4.3,6.1,4.8,5.7,5.2c0,0,0,0-0.1,0.1L3.2,7.6C2.4,8.3,2,9.3,2,10.3c0,1,0.4,2,1.2,2.7c1.6,1.5,4.1,1.5,5.7,0 c0.4-0.4,1-0.4,1.5-0.1c0.4,0.3,0.4,0.9,0.1,1.2c0,0,0,0.1-0.1,0.1l-0.1,0.1C9.2,15.4,7.7,16,6.1,16z M12.1,12.3 c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.3-0.4-0.9-0.1-1.3c0,0,0,0,0.1-0.1l2.4-2.3C15.3,7,15.4,4.7,14,3.2c-0.1-0.1-0.1-0.1-0.2-0.2 c-1.6-1.5-4.1-1.5-5.7,0C7.6,3.4,7,3.4,6.6,3C6.2,2.7,6.2,2.1,6.6,1.7c0,0,0,0,0.1-0.1c2.4-2.2,6.2-2.2,8.6,0 c2.2,2.1,2.4,5.6,0.3,7.8c-0.1,0.1-0.2,0.2-0.3,0.3L12.8,12C12.6,12.2,12.4,12.3,12.1,12.3z M6.3,10L6.3,10C6,9.7,5.9,9.1,6.3,8.7 c0,0,0,0,0.1-0.1L9.2,6c0.4-0.4,1-0.4,1.4,0l0,0c0.4,0.3,0.4,0.9,0.1,1.3c0,0,0,0-0.1,0.1L7.8,10C7.4,10.4,6.7,10.4,6.3,10L6.3,10z" />
+                     </svg>
+                  </a>
+                  <a href="#" class="f-icon">
+                     <svg width="14" height="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 15 19"
+                        style="enable-background:new 0 0 15 19;" xml:space="preserve">
+                        <path id="ic_map"
+                           d="M7.5,19c-0.3,0-0.6-0.1-0.8-0.3C6.1,18,0,11.7,0,7.7C-0.1,3.6,3.2,0.1,7.3,0 c4.1-0.1,7.6,3.2,7.7,7.3c0,0.1,0,0.3,0,0.4c0,4-6.1,10.2-6.8,10.9C8.1,18.9,7.8,19,7.5,19z M7.5,2.2c-3,0-5.4,2.5-5.3,5.5 c0,2.1,3,6,5.3,8.6c2.3-2.5,5.3-6.5,5.3-8.6C12.9,4.7,10.5,2.3,7.5,2.2z" />
+                     </svg>
+                  </a>
+                  <a href="#" class="f-icon">
+                     <svg width="15" height="15" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17 17"
+                        style="enable-background:new 0 0 17 17;" xml:space="preserve">
+                        <path id="ic_emoji"
+                           d="M8.5,17C3.8,17,0,13.2,0,8.5S3.8,0,8.5,0C13.2,0,17,3.8,17,8.5C17,13.2,13.2,17,8.5,17z M8.5,1.9 C4.9,2,2,4.9,2,8.5c0,3.6,2.9,6.6,6.6,6.6c3.6,0,6.6-2.9,6.6-6.6C15.1,4.9,12.1,2,8.5,1.9z M8.5,13.2c-1.7,0-3.2-0.9-4.1-2.3 c-0.3-0.5-0.1-1.1,0.4-1.3c0.5-0.2,1-0.1,1.3,0.3c0.8,1.3,2.5,1.8,3.8,1c0.4-0.2,0.7-0.6,1-1c0.3-0.5,0.9-0.6,1.3-0.4 c0.5,0.3,0.6,0.9,0.4,1.3l0,0C11.8,12.3,10.2,13.2,8.5,13.2z" />
+                     </svg>
+                  </a>
+               </div>
+               <div class="d-flex align-items-center ml-auto ml-sm-0 mt-0 mt-sm-0">
+                  <a href="#" class="f-icon ml-0 mr-3">
+                     <svg width="4" height="13" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 4 15"
+                        style="enable-background:new 0 0 4 15;" xml:space="preserve">
+                        <path id="ic_more"
+                           d="M2,0c1.1,0,2,0.9,2,2S3.1,4,2,4S0,3.1,0,2S0.9,0,2,0z M2,11c1.1,0,2,0.9,2,2s-0.9,2-2,2 s-2-0.9-2-2S0.9,11,2,11z" />
+                     </svg>
+                  </a>
+                  <button type="button" class="btn btn-icon-black btn-send" data-dismiss="modal">
+                     <svg class="icon" width="15" height="17" version="1.1" id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 17 20" style="enable-background:new 0 0 17 20;" xml:space="preserve">
+                        <path id="ic_send"
+                           d="M16.4,8.8L2,0.2c-0.4-0.2-0.9-0.2-1.3,0C0.3,0.5,0,0.9,0,1.4v17.3c0,0.5,0.3,0.9,0.7,1.2 C0.9,19.9,1.1,20,1.3,20c0.2,0,0.5-0.1,0.7-0.2l14.4-8.7c0.7-0.4,0.9-1.2,0.5-1.9C16.7,9.1,16.5,8.9,16.4,8.8z M2.2,17v-5.8h4.4 c0.6,0,1.1-0.6,1.1-1.2c0-0.6-0.5-1.1-1.1-1.1H2.2V3l11.6,7L2.2,17z" />
+                     </svg><span class="d-none d-sm-block">Send </span>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!--script file start here-->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/slick.js"></script>
+   <script src="js/main.js"></script>
+</body>
+
+</html>
